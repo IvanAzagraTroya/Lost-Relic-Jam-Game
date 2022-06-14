@@ -2,50 +2,76 @@
 using UnityEngine.AI;
 
 namespace Golems{
-    public class GolemBehaviour : MonoBehaviour
+    public class GolemBehaviour : MonoBehaviour, IGolemBehaviour
     {
         public NavMeshAgent agent; 
 
-        public Transform player;
+        public bool isPlayerInAttackRange {get; private set;}
+        public bool isPlayerNoticeable { get; private set;}
+        public bool isAlive {get; private set;}
+        public bool hasAttacked {get; private set;}
 
-        public LayerMask whatIsPlayer, whatIsGround;
+        public float timeBetweenAttacks {get; private set;}
+
+        public LayerMask whatIsPlayer {get; private set;}
+        public LayerMask whatIsGround {get; private set;}
+
+        public Transform player {get; private set;}
+
+        // This serrves as a temporary fast fix to player object, the ideal case would be to change it on line 45
+        // as it ask for an String referring to the objects name and not the Object reference itself
+        public string playerObject;
 
         public Vector3 walkPoint;
         bool walkCheckPoint;
         public float walkPointRange;
 
         // This serves as a controller for the hit logic, if the player is hitten 3 times this will kill it;
-        [SerializeField]
+        //[HideInInspector]
         public int counter; //If the player has 0 velocity when the monster attacks it would be instakill.
         [SerializeField]
         float timer;
 
         // this two values will represent the distance where the player can be noticed and the distance for being attacked
         public float noticeRange, attackRange;
-        public bool isPlayerIsNoticeable, isPlayerInAttackRange;
-        bool hasAttacked;
+
+        //[SerializeField]
+        //private Animator golemAnim = null;
 
         private void Awake() {
 
-            //player = GameObject.Find("Barbarian").transform;
-            agent.GetComponent<NavMeshAgent>();
+            player = GameObject.Find(playerObject).transform;
+            agent = GetComponent<NavMeshAgent>();
+            //golemAnim = GetComponent<Animator>();
+            
+
+        }
+
+        void Start() {
+
+            whatIsPlayer = LayerMask.GetMask("Player");
+            whatIsGround = LayerMask.GetMask("Ground");
+            //player = GameObject.Find(playerObject).transform.position;
 
         }
 
         void Update() {
 
-            isPlayerIsNoticeable = Physics.CheckSphere(transform.position, noticeRange, whatIsPlayer);
+            isPlayerNoticeable = Physics.CheckSphere(transform.position, noticeRange, whatIsPlayer);
             isPlayerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
 
-            if(!isPlayerIsNoticeable && !isPlayerInAttackRange) PatrolState();
-            if(isPlayerIsNoticeable && !isPlayerInAttackRange) ChasingState();
-            if(isPlayerIsNoticeable && isPlayerInAttackRange) AttackState();
+            if(!isPlayerNoticeable && !isPlayerInAttackRange) PatrolState();
+            if(isPlayerNoticeable && !isPlayerInAttackRange) ChasingState();
+            if(isPlayerNoticeable && isPlayerInAttackRange) AttackState();
         }
 
         private void PatrolState() {
-            if (!walkCheckPoint) 
+            Debug.Log("Im patroling");
+            if (!walkCheckPoint) {
+                Debug.Log("Should be searching for a random point");
                 SearchForWalkPoint();
-            else 
+            }
+            if (walkCheckPoint) 
                 agent.SetDestination(walkPoint);
             
             Vector3 distanceToPoint = transform.position - walkPoint;
@@ -67,28 +93,28 @@ namespace Golems{
         }
 
         private void ChasingState() {
-
+            Debug.Log("Im chasing the player");
             agent.SetDestination(player.position);
 
         }
 
         private void AttackState() {
             Debug.Log("Attack state entered");
+            
             // i don't want the golem to continue it's movement since it's supposed to stop if it's going to attack the player
             agent.SetDestination(transform.position);
             
-
-            // See if this doesn't make the golem to rotate on itself if the player moves while attacking
             transform.LookAt(player);
 
             if (!hasAttacked) {
                 hasAttacked = true;
-                Invoke(nameof(ResetAttack), 10f);
+                Invoke(nameof(ResetAttack), timeBetweenAttacks);
                 AttackCounter();
             }
         }
 
         private void ResetAttack() {
+            Debug.Log("Should be reseting the attack");
             hasAttacked = false;
         }
 
@@ -96,21 +122,18 @@ namespace Golems{
             counter++;
 
             if (counter == 1) {
+                Debug.Log("The first attack ahs been made");
                 // add rb.force to the player
             } 
             else if(counter == 2) {
+                Debug.Log("Second attack incoming");
                 // remove health from the player
             }
             else if(counter == 3) {
-                
-                timer += Time.deltaTime;
+                Debug.Log("U dead time for despawn");
+                timer += Time.deltaTime; // This timer only works for definig how many time it has to wait before destroying the object
                 //if(timer  >= 5) destroy(Barbarian)  
             } //else if(counter == 1 && playerVelocity == 0f){ destroy(Barbarian)}
-        }
-
-        private void OnTriggerEnter(Collider other) {
-            if(other.CompareTag("Player")) AttackState();
-            
         }
 
         private void OnDrawGizmosSelected() {
