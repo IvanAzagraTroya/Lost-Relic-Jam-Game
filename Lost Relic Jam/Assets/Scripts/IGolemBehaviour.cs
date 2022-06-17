@@ -11,6 +11,8 @@ namespace Golems{
         public bool hasAttacked {get;}
 
         public float timeBetweenAttacks {get;}
+        public float noticeRange {get;}
+        public float attackRange {get;}
 
         public LayerMask whatIsPlayer {get; }
         public LayerMask whatIsGround {get; }

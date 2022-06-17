@@ -12,11 +12,14 @@ namespace Golems{
         public bool hasAttacked {get; private set;}
 
         public float timeBetweenAttacks {get; private set;}
+        public float noticeRange {get; private set;}
+        public float attackRange {get; private set;}
 
         public LayerMask whatIsPlayer {get; private set;}
         public LayerMask whatIsGround {get; private set;}
 
         public Transform player {get; private set;}
+        public Transform bone;
 
         // This serrves as a temporary fast fix to player object, the ideal case would be to change it on line 45
         // as it ask for an String referring to the objects name and not the Object reference itself
@@ -33,7 +36,7 @@ namespace Golems{
         float timer;
 
         // this two values will represent the distance where the player can be noticed and the distance for being attacked
-        public float noticeRange, attackRange;
+        public float notice, attack;
 
         //[SerializeField]
         //private Animator golemAnim = null;
@@ -52,6 +55,9 @@ namespace Golems{
             whatIsPlayer = LayerMask.GetMask("Player");
             whatIsGround = LayerMask.GetMask("Ground");
             //player = GameObject.Find(playerObject).transform.position;
+            noticeRange = notice;
+            attackRange = attack;
+            timeBetweenAttacks = 5f;
 
         }
 
@@ -63,6 +69,7 @@ namespace Golems{
             if(!isPlayerNoticeable && !isPlayerInAttackRange) PatrolState();
             if(isPlayerNoticeable && !isPlayerInAttackRange) ChasingState();
             if(isPlayerNoticeable && isPlayerInAttackRange) AttackState();
+            
         }
 
         private void PatrolState() {
@@ -93,8 +100,10 @@ namespace Golems{
         }
 
         private void ChasingState() {
+            //bone.Rotate(0f, 0f, -75f); this doesn't do anything
             Debug.Log("Im chasing the player");
             agent.SetDestination(player.position);
+            
 
         }
 
