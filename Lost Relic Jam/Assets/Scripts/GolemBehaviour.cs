@@ -19,7 +19,6 @@ namespace Golems{
         public LayerMask whatIsGround {get; private set;}
 
         public Transform player {get; private set;}
-        public Transform bone;
 
         // This serrves as a temporary fast fix to player object, the ideal case would be to change it on line 45
         // as it ask for an String referring to the objects name and not the Object reference itself
@@ -28,6 +27,8 @@ namespace Golems{
         public Vector3 walkPoint;
         bool walkCheckPoint;
         public float walkPointRange;
+
+        public Collider golemCollider;
 
         // This serves as a controller for the hit logic, if the player is hitten 3 times this will kill it;
         //[HideInInspector]
@@ -45,6 +46,7 @@ namespace Golems{
 
             player = GameObject.Find(playerObject).transform;
             agent = GetComponent<NavMeshAgent>();
+            golemCollider = GetComponent<Collider>();
             //golemAnim = GetComponent<Animator>();
             
 
@@ -100,9 +102,9 @@ namespace Golems{
         }
 
         private void ChasingState() {
-            //bone.Rotate(0f, 0f, -75f); this doesn't do anything
             Debug.Log("Im chasing the player");
-            agent.SetDestination(player.position);
+            walkPoint = player.position;
+            agent.SetDestination(walkPoint);
             
 
         }
@@ -129,20 +131,23 @@ namespace Golems{
 
         private void AttackCounter() {
             counter++;
-
             if (counter == 1) {
                 Debug.Log("The first attack ahs been made");
+                golemCollider.enabled = true;
                 // add rb.force to the player
             } 
             else if(counter == 2) {
                 Debug.Log("Second attack incoming");
+                golemCollider.enabled = true;
                 // remove health from the player
             }
             else if(counter == 3) {
                 Debug.Log("U dead time for despawn");
+                golemCollider.enabled = true;
                 timer += Time.deltaTime; // This timer only works for definig how many time it has to wait before destroying the object
                 //if(timer  >= 5) destroy(Barbarian)  
             } //else if(counter == 1 && playerVelocity == 0f){ destroy(Barbarian)}
+            golemCollider.enabled = !golemCollider.enabled;
         }
 
         private void OnDrawGizmosSelected() {

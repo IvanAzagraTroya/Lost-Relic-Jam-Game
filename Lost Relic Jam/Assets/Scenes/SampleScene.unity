@@ -122,14 +122,14 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: 6eb28ebff33587546b9e806db5ccfa4b, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 049e8d71241dfce49a0276b454ac0b37, type: 2}
 --- !u!43 &24188514
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh26342
+  m_Name: pb_Mesh27398
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -293,7 +293,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh26628
+  m_Name: pb_Mesh27684
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -457,7 +457,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh26408
+  m_Name: pb_Mesh27464
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -629,7 +629,7 @@ GameObject:
   - component: {fileID: 114761327}
   - component: {fileID: 114761326}
   - component: {fileID: 114761325}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1295,7 +1295,7 @@ GameObject:
   - component: {fileID: 159446762}
   - component: {fileID: 159446761}
   - component: {fileID: 159446760}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2127,7 +2127,7 @@ GameObject:
   - component: {fileID: 374766843}
   - component: {fileID: 374766842}
   - component: {fileID: 374766841}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2785,7 +2785,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh26558
+  m_Name: pb_Mesh27616
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2950,9 +2950,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 285244364, guid: e812c04705f47d645beb13e90ec0ff93, type: 3}
+      propertyPath: m_Size.z
+      value: 1.3942858
+      objectReference: {fileID: 0}
+    - target: {fileID: 285244364, guid: e812c04705f47d645beb13e90ec0ff93, type: 3}
+      propertyPath: m_Center.z
+      value: 0.095
+      objectReference: {fileID: 0}
     - target: {fileID: 285244365, guid: e812c04705f47d645beb13e90ec0ff93, type: 3}
       propertyPath: m_Speed
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 285244365, guid: e812c04705f47d645beb13e90ec0ff93, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 285244365, guid: e812c04705f47d645beb13e90ec0ff93, type: 3}
       propertyPath: m_BaseOffset
@@ -3124,7 +3136,7 @@ GameObject:
   - component: {fileID: 729344515}
   - component: {fileID: 729344514}
   - component: {fileID: 729344513}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3782,7 +3794,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh26430
+  m_Name: pb_Mesh27486
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3998,7 +4010,7 @@ GameObject:
   - component: {fileID: 755715301}
   - component: {fileID: 755715300}
   - component: {fileID: 755715299}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4664,7 +4676,7 @@ GameObject:
   - component: {fileID: 811263379}
   - component: {fileID: 811263378}
   - component: {fileID: 811263377}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5330,7 +5342,7 @@ GameObject:
   - component: {fileID: 872494188}
   - component: {fileID: 872494187}
   - component: {fileID: 872494186}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6278,7 +6290,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh26444
+  m_Name: pb_Mesh27500
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6513,7 +6525,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.15571018, y: 0.042931773, z: -0.006774019, w: 0.98684615}
+  m_LocalRotation: {x: 0.15385015, y: 0.04294446, z: -0.0066930996, w: 0.98713785}
   m_LocalPosition: {x: 200.85901, y: 38.909027, z: 24.226776}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -6562,7 +6574,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh26458
+  m_Name: pb_Mesh27514
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6734,7 +6746,7 @@ GameObject:
   - component: {fileID: 1022283860}
   - component: {fileID: 1022283859}
   - component: {fileID: 1022283858}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7400,7 +7412,7 @@ GameObject:
   - component: {fileID: 1024746632}
   - component: {fileID: 1024746631}
   - component: {fileID: 1024746630}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8066,7 +8078,7 @@ GameObject:
   - component: {fileID: 1187559851}
   - component: {fileID: 1187559850}
   - component: {fileID: 1187559849}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8724,7 +8736,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh26356
+  m_Name: pb_Mesh27412
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8928,7 +8940,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 0.8472222, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -8944,7 +8956,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1242717419}
-  m_LocalRotation: {x: 0.15571018, y: 0.042931773, z: -0.006774019, w: 0.98684615}
+  m_LocalRotation: {x: 0.15385015, y: 0.04294446, z: -0.0066930996, w: 0.98713785}
   m_LocalPosition: {x: 200.85901, y: 38.909027, z: 24.226776}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -8974,10 +8986,11 @@ MonoBehaviour:
   playerObject: Player
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 71.8
+  golemCollider: {fileID: 0}
   counter: 0
-  timer: 0
-  noticeRange: 190
-  attackRange: 10
+  timer: 10
+  notice: 200
+  attack: 10
 --- !u!195 &1269826124 stripped
 NavMeshAgent:
   m_CorrespondingSourceObject: {fileID: 285244365, guid: e812c04705f47d645beb13e90ec0ff93, type: 3}
@@ -9016,7 +9029,7 @@ GameObject:
   - component: {fileID: 1275829180}
   - component: {fileID: 1275829179}
   - component: {fileID: 1275829178}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9720,7 +9733,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh26528
+  m_Name: pb_Mesh27584
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -9884,7 +9897,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh26612
+  m_Name: pb_Mesh27668
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -10048,7 +10061,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh26500
+  m_Name: pb_Mesh27556
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -10212,7 +10225,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh26384
+  m_Name: pb_Mesh27440
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -10376,7 +10389,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh26586
+  m_Name: pb_Mesh27644
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -10548,7 +10561,7 @@ GameObject:
   - component: {fileID: 1746210982}
   - component: {fileID: 1746210981}
   - component: {fileID: 1746210980}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11290,7 +11303,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1980085338}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 211.3, y: 0, z: 144}
+  m_LocalPosition: {x: 211.3, y: 0.5, z: 144}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11311,7 +11324,7 @@ GameObject:
   - component: {fileID: 2030253859}
   - component: {fileID: 2030253858}
   - component: {fileID: 2030253857}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11969,7 +11982,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh26514
+  m_Name: pb_Mesh27570
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -12141,7 +12154,7 @@ GameObject:
   - component: {fileID: 2078406535}
   - component: {fileID: 2078406534}
   - component: {fileID: 2078406533}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12799,7 +12812,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh26472
+  m_Name: pb_Mesh27528
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
