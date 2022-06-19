@@ -1,2 +1,2 @@
-# Lost Relic Jam Game(1)
+# Lost Relic Jam Game
  
